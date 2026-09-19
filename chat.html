@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMO HQ — Chat</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">TMO<span>HQ</span></div>
+    <nav>
+      <a href="app.html">Dashboard</a>
+      <a href="chat.html" class="active">Chat</a>
+      <a href="memes.html">Mèmes</a>
+      <a href="defis.html">Défis</a>
+      <a href="classement.html">Classement</a>
+      <button id="logout" class="btn btn-ghost">Déconnexion</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Chat de la team</h2>
+    <div id="messages" class="chat-box"></div>
+    <form id="chat-form" class="chat-form">
+      <input id="chat-input" type="text" placeholder="Écris ton message…" autocomplete="off" required />
+      <button class="btn btn-primary" type="submit">Envoyer</button>
+    </form>
+  </main>
+
+  <script type="module" src="js/chat.js"></script>
+</body>
+</html>
