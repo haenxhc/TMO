@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMO HQ — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">TMO<span>HQ</span></div>
+    <nav>
+      <a href="app.html" class="active">Dashboard</a>
+      <a href="chat.html">Chat</a>
+      <a href="memes.html">Mèmes</a>
+      <a href="defis.html">Défis</a>
+      <a href="classement.html">Classement</a>
+      <button id="logout" class="btn btn-ghost">Déconnexion</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Bienvenue <span id="pseudo">…</span> 🫡</h2>
+      <p>Voici l'état actuel du QG.</p>
+    </section>
+
+    <section class="grid grid-3">
+      <div class="card stat">
+        <h3>Membres</h3>
+        <p id="stat-membres" class="stat-num">—</p>
+      </div>
+      <div class="card stat">
+        <h3>Mèmes postés</h3>
+        <p id="stat-memes" class="stat-num">—</p>
+      </div>
+      <div class="card stat">
+        <h3>Défis en cours</h3>
+        <p id="stat-defis" class="stat-num">—</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Derniers mèmes</h3>
+      <div id="last-memes" class="grid grid-3"></div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
