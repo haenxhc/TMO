@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMO HQ</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>TMO HQ</h1>
+    <p>Le QG privé de la team.</p>
+  </header>
+
+  <main>
+    <section id="login">
+      <button id="google-login">Connexion avec Google</button>
+      <button id="logout" style="display:none;">Déconnexion</button>
+      <p id="user-info"></p>
+    </section>
+  </main>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup,
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    // Remplace par ta config Firebase
+    const firebaseConfig = {
+      apiKey: "TON_API_KEY",
+      authDomain: "TON_PROJET.firebaseapp.com",
+      projectId: "TON_PROJET",
+      storageBucket: "TON_PROJET.appspot.com",
+      messagingSenderId: "TON_SENDER_ID",
+      appId: "TON_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    const loginBtn = document.getElementById("google-login");
+    const logoutBtn = document.getElementById("logout");
+    const userInfo = document.getElementById("user-info");
+
+    loginBtn.addEventListener("click", async () => {
+      try {
+        await signInWithPopup(auth, provider);
+      } catch (e) {
+        console.error(e);
+        alert("Erreur de connexion");
+      }
+    });
+
+    logoutBtn.addEventListener("click", () => signOut(auth));
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        loginBtn.style.display = "none";
+        logoutBtn.style.display = "inline-block";
+        userInfo.textContent = `Connecté : ${user.displayName || user.email}`;
+        // Redirection possible vers app.html
+        // window.location.href = "app.html";
+      } else {
+        loginBtn.style.display = "inline-block";
+        logoutBtn.style.display = "none";
+        userInfo.textContent = "";
+      }
+    });
+  </script>
+</body>
+  </html>
