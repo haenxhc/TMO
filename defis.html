@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMO HQ — Défis</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">TMO<span>HQ</span></div>
+    <nav>
+      <a href="app.html">Dashboard</a>
+      <a href="chat.html">Chat</a>
+      <a href="memes.html">Mèmes</a>
+      <a href="defis.html" class="active">Défis</a>
+      <a href="classement.html">Classement</a>
+      <button id="logout" class="btn btn-ghost">Déconnexion</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h3>Proposer un défi</h3>
+      <form id="defi-form" class="meme-form">
+        <input id="defi-titre" type="text" placeholder="Titre du défi" required />
+        <input id="defi-desc" type="text" placeholder="Description" />
+        <button class="btn btn-primary" type="submit">Lancer</button>
+      </form>
+    </section>
+
+    <section>
+      <h3>Défis en cours</h3>
+      <div id="defis-list" class="grid grid-2"></div>
+    </section>
+  </main>
+
+  <script type="module" src="js/defis.js"></script>
+</body>
+</html>
