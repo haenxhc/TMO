@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMO HQ — Mèmes</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">TMO<span>HQ</span></div>
+    <nav>
+      <a href="app.html">Dashboard</a>
+      <a href="chat.html">Chat</a>
+      <a href="memes.html" class="active">Mèmes</a>
+      <a href="defis.html">Défis</a>
+      <a href="classement.html">Classement</a>
+      <button id="logout" class="btn btn-ghost">Déconnexion</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h3>Poster un mème</h3>
+      <form id="meme-form" class="meme-form">
+        <input type="file" id="meme-file" accept="image/*" required />
+        <input type="text" id="meme-caption" placeholder="Légende…" />
+        <button class="btn btn-primary" type="submit">Publier</button>
+      </form>
+    </section>
+
+    <section>
+      <h3>Le mur</h3>
+      <div id="meme-wall" class="grid grid-3"></div>
+    </section>
+  </main>
+
+  <script type="module" src="js/memes.js"></script>
+</body>
+</html>
