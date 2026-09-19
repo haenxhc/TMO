@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMO HQ — Classement</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">TMO<span>HQ</span></div>
+    <nav>
+      <a href="app.html">Dashboard</a>
+      <a href="chat.html">Chat</a>
+      <a href="memes.html">Mèmes</a>
+      <a href="defis.html">Défis</a>
+      <a href="classement.html" class="active">Classement</a>
+      <button id="logout" class="btn btn-ghost">Déconnexion</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Classement de la team</h2>
+    <div id="leaderboard" class="leaderboard"></div>
+  </main>
+
+  <script type="module" src="js/classement.js"></script>
+</body>
+</html>
